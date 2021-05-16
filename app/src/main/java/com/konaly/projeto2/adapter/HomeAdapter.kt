@@ -5,10 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.konaly.projeto2.R
-import com.konaly.projeto2.datasorce.Modelo
+import com.konaly.projeto2.model.Produto
+import com.konaly.projeto2.model.ProdutoItem
 import kotlinx.android.synthetic.main.item.view.*
 
-class HomeAdapter(private val items:ArrayList<Modelo>):RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
+class HomeAdapter(private val items:Produto):RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder =
@@ -21,7 +22,7 @@ class HomeAdapter(private val items:ArrayList<Modelo>):RecyclerView.Adapter<Home
     }
 
     inner class HomeViewHolder(itemView:View):RecyclerView.ViewHolder(itemView) {
-        fun bind(modelo: Modelo) {
+        fun bind(modelo: ProdutoItem) {
             itemView.textNome.text = modelo.nome
             itemView.textDesc.text = modelo.descricao
         }
