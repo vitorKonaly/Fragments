@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+    <item android:id="@+id/menuHome"
+        android:title="HOME"
+        android:icon="@drawable/ic_home"
+        app:showAsAction="ifRoom"
+        />
+    <item android:id="@+id/menuProdutos"
+        android:title="PRODUTOS"
+        android:icon="@drawable/ic_produtos"
+        app:showAsAction="always"
+        />
+    <item android:id="@+id/menuFavoritos"
+        android:title="FAVORITOS"
+        android:icon="@drawable/ic_favoritos"
+        app:showAsAction="always"
+        />
+    </group>
+</menu>
