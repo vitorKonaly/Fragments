@@ -13,13 +13,10 @@ import com.konaly.projeto2.fragments.HomeFragment
 import com.konaly.projeto2.fragments.ProdutosFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(),View.OnClickListener,BottomNavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSelectedListener {
 
 
 
-    private lateinit var buttonHome:Button
-    private lateinit var buttonProdutos:Button
-    private lateinit var buttonFavoritos:Button
 
     private lateinit var homeFragment:HomeFragment
     private lateinit var produtosFragment: ProdutosFragment
@@ -31,14 +28,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener,BottomNavigationVi
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        buttonHome = btnHome
-        buttonHome.setOnClickListener (this)
 
-        buttonFavoritos = btnFavoritos
-        buttonFavoritos.setOnClickListener(this)
-
-        buttonProdutos = btnProdutos
-        buttonProdutos.setOnClickListener (this)
 
         homeFragment = HomeFragment()
         produtosFragment = ProdutosFragment()
@@ -55,23 +45,11 @@ class MainActivity : AppCompatActivity(),View.OnClickListener,BottomNavigationVi
         fragmentTransaction.commit()
     }
 
-    override fun onClick(v: View) {
-        when(v.id){
-            R.id.btnHome ->{
-                setFragment(homeFragment)
-            }
-
-            R.id.btnProdutos ->{
-                setFragment(produtosFragment)
-
-            }
-
-            R.id.btnFavoritos ->{
-                setFragment(favoritosFragment)
-
-            }
-        }
-    }
+//    override fun onClick(v: View) {
+//        when(v.id){
+//
+//        }
+//    }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
